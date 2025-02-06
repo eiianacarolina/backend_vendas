@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\ItemVendaController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\VendaController;
 use Illuminate\Http\Request;
@@ -26,3 +27,10 @@ Route::get('/vendas', [VendaController::class, 'index']);
 Route::get('/vendas/{id}', [VendaController::class, 'show']);
 Route::put('/vendas/{id}', [VendaController::class, 'update']);
 Route::delete('/vendas/{id}', [VendaController::class, 'delete']);
+
+//Item Venda
+Route::post('/itens-vendas', [ItemVendaController::class, 'store']);
+Route::get('/itens-vendas', [ItemVendaController::class, 'index']);
+Route::get('/itens-vendas/{id}', [ItemVendaController::class, 'show']);
+Route::put('/itens-vendas/{id}', [ItemVendaController::class, 'update']);
+Route::delete('/itens-vendas/{id}', [ItemVendaController::class, 'delete']);

@@ -27,7 +27,7 @@ class ProdutoStoreFormRequest extends FormRequest
             'nome'=> 'required|max:255',
             'codigo'=> 'required|unique:App\Models\Produto,codigo',
             'preco'=> 'Required|max:10,2',
-            'quantidade_estoque'=>'required|min:1',
+            'quantidade_estoque'=>'required',
         ];
     }
 
@@ -51,8 +51,7 @@ class ProdutoStoreFormRequest extends FormRequest
             'codigo.unique'=>'O campo é único',
             'preco.required'=>'O campo nome é obrigatório',
             'preco.max'=>'Você atingiu o número máximo de caracteres',
-            'quantidade_estoque.required'=> 'O campo nome é obrigatório',
-            'quantidade_estoque.min'=> 'Você precisa de 1 no mínimo',
+            'quantidade_estoque.required'=> 'O campo nome é obrigatório'
         ];
     }
 }

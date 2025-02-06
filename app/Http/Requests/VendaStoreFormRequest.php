@@ -6,7 +6,7 @@ use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
-class ProdutoUpdateFormRequest extends FormRequest
+class VendaStoreFormRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,8 @@ class ProdutoUpdateFormRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nome'=> 'max:255',
-            'codigo'=> 'unique:App\Models\Produto,codigo',
-            'preco'=> '|max:10,2'
+            'cliente_id'=> 'required',
+            'desconto'=> 'required'
         ];
     }
 
@@ -44,9 +43,8 @@ class ProdutoUpdateFormRequest extends FormRequest
     public function messages()
     {
         return [
-            'nome.max'=> 'Você atingiu o número máximo de caracteres',
-            'codigo.unique'=>'O campo é único',
-            'preco.max'=>'Você atingiu o número máximo de caracteres'
+           'cliente_id.required'=> 'O campo é obrigatório',
+           'desconto.required'=> 'O campo é obrigatório'
         ];
     }
 }
